@@ -1,0 +1,16 @@
+{
+  "preset": "google",
+  "validateLineBreaks": "LF",
+  "validateIndentation": 2,
+  "requireCurlyBraces": true,
+  "requireSemicolons": true,
+  "maximumLineLength": false,
+  "disallowTrailingComma": true,
+  "disallowTrailingWhitespace": true,
+  "validateParameterSeparator": ", ",
+  "requireLineFeedAtFileEnd": true,
+  "disallowMultipleLineBreaks": true,
+  "disallowSpacesInsideObjectBrackets": false,
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "maxErrors": 1000
+}
