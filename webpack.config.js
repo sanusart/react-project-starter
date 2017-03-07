@@ -22,7 +22,6 @@ module.exports = {
     path: __dirname + '/dist/',
     filename: '[name].js'
   },
-  debug: true,
   devtool: 'source-map',
   module: {
     loaders: [{

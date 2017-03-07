@@ -30,7 +30,8 @@ class CoolJs extends React.Component {
                 <strong>{this.props.cooljs.appName}</strong>
               </h3>
               <div className="input-group col-md-12">
-                <input onKeyPress={this.onKeyPress} type="text" ref={ref => this.search = ref} className=" search-query form-control" placeholder="GitHub Username"/>
+                <input onKeyPress={this.onKeyPress} type="text" ref={ref => this.search = ref}
+                       className=" search-query form-control" placeholder="GitHub Username"/>
                 <span className="input-group-btn">
                   <button onClick={this.onSubmit} className="btn" type="button">
                     <span className="glyphicon glyphicon-search"></span>
@@ -43,7 +44,7 @@ class CoolJs extends React.Component {
             {this.props.cooljs.user[0].hasOwnProperty('login')
               ? this.props.cooljs.user.map((u, key) => {
                 return (
-                  <div className="container">
+                  <div key={key} className="container">
                     <div className="row">
                       <div className="col-xs-12">
                         <div key={key} className="media">
@@ -55,26 +56,28 @@ class CoolJs extends React.Component {
                           <div className="media-body">
                             <h2 className="media-heading">{u.login}</h2>
                             <table className="table">
-                              <tr>
-                                <td valign="top">
-                                  <p>Name: {u.name}</p>
-                                  <p>Company: {u.company}</p>
-                                  <p>Blog: {u.blog}</p>
-                                  <p>Location: {u.location}</p>
-                                  <p>email: {u.email ? u.email : '--'}</p>
-                                  <p>hireable: {u.hireable ? 'yes' : 'no'}</p>
-                                </td>
-                                <td valign="top">
-                                  <p>Bio: {u.bio ? u.bio : '--'}</p>
-                                  <p>Public_repos: {u.public_repos}</p>
-                                  <p>Public_gists: {u.public_gists}</p>
-                                  <p>Followers: {u.followers}</p>
-                                  <p>Following: {u.following}</p>
-                                  <p>
-                                    <a className="btn btn-default" href={u.html_url}>View Profile</a>
-                                  </p>
-                                </td>
-                              </tr>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <p>Name: {u.name}</p>
+                                    <p>Company: {u.company}</p>
+                                    <p>Blog: {u.blog}</p>
+                                    <p>Location: {u.location}</p>
+                                    <p>email: {u.email ? u.email : '--'}</p>
+                                    <p>hireable: {u.hireable ? 'yes' : 'no'}</p>
+                                  </td>
+                                  <td>
+                                    <p>Bio: {u.bio ? u.bio : '--'}</p>
+                                    <p>Public_repos: {u.public_repos}</p>
+                                    <p>Public_gists: {u.public_gists}</p>
+                                    <p>Followers: {u.followers}</p>
+                                    <p>Following: {u.following}</p>
+                                    <p>
+                                      <a className="btn btn-default" href={u.html_url}>View Profile</a>
+                                    </p>
+                                  </td>
+                                </tr>
+                              </tbody>
                             </table>
                           </div>
                         </div>
@@ -92,8 +95,9 @@ class CoolJs extends React.Component {
                     <div className="thumbnail">
                       <div className="caption">
                         <h4 style={{height: '40px'}} className="">{repo.name}</h4>
-                        <p style={{height: '100px',overflow: 'hidden'}} className="">{repo.description}</p>
-                        <a href={repo.html_url} className="btn btn-default btn-xs pull-right" role="button">More Info</a>
+                        <p style={{height: '100px', overflow: 'hidden'}} className="">{repo.description}</p>
+                        <a href={repo.html_url} className="btn btn-default btn-xs pull-right" role="button">More
+                          Info</a>
                         <span className="">
                           <i className="glyphicon glyphicon-star"></i> {repo.stargazers_count}
                         </span>
